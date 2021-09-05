@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Levu\\source\\repos\\tfzr-rsok-autosalon\\tfzr-rsok-autosalon.csproj": {}
+    "C:\\Users\\Levu\\Documents\\Kraken\\TFZR-2021-RSOK-AutoSalon\\tfzr-rsok-autosalon\\tfzr-rsok-autosalon.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Levu\\source\\repos\\tfzr-rsok-autosalon\\tfzr-rsok-autosalon.csproj": {
+    "C:\\Users\\Levu\\Documents\\Kraken\\TFZR-2021-RSOK-AutoSalon\\tfzr-rsok-autosalon\\tfzr-rsok-autosalon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Levu\\source\\repos\\tfzr-rsok-autosalon\\tfzr-rsok-autosalon.csproj",
+        "projectUniqueName": "C:\\Users\\Levu\\Documents\\Kraken\\TFZR-2021-RSOK-AutoSalon\\tfzr-rsok-autosalon\\tfzr-rsok-autosalon.csproj",
         "projectName": "tfzr-rsok-autosalon",
-        "projectPath": "C:\\Users\\Levu\\source\\repos\\tfzr-rsok-autosalon\\tfzr-rsok-autosalon.csproj",
+        "projectPath": "C:\\Users\\Levu\\Documents\\Kraken\\TFZR-2021-RSOK-AutoSalon\\tfzr-rsok-autosalon\\tfzr-rsok-autosalon.csproj",
         "packagesPath": "C:\\Users\\Levu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Levu\\source\\repos\\tfzr-rsok-autosalon\\obj\\",
+        "outputPath": "C:\\Users\\Levu\\Documents\\Kraken\\TFZR-2021-RSOK-AutoSalon\\tfzr-rsok-autosalon\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
