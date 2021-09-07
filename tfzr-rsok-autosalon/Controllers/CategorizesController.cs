@@ -11,7 +11,7 @@ namespace tfzr_rsok_autosalon.Controllers
 {
     public class CategorizesController : BaseController<Categorizes>
     {
-        private readonly ICategorizesService _service;
+        private new readonly ICategorizesService _service;
         public CategorizesController(ICategorizesService service) : base(service)
         {
             _service = service;

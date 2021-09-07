@@ -11,7 +11,7 @@ namespace tfzr_rsok_autosalon.Controllers
 {
     public class OrdersController : BaseController<Orders>
     {
-        private readonly IOrdersService _service;
+        private new readonly IOrdersService _service;
         public OrdersController(IOrdersService service) : base(service)
         {
             _service = service;

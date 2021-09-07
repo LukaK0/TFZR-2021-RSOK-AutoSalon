@@ -11,7 +11,7 @@ namespace tfzr_rsok_autosalon.Controllers
 {
     public class ManufacturersController : BaseController<Manufacturers>
     {
-        private readonly IManufacturersService _service;
+        private new readonly IManufacturersService _service;
         public ManufacturersController(IManufacturersService service) : base(service)
         {
             _service = service;
