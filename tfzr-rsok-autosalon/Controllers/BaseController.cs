@@ -34,7 +34,7 @@ namespace tfzr_rsok_autosalon.Controllers
             {
                 _service.Update(value);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return RedirectToAction("Edit");
             }
