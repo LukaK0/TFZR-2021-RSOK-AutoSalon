@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using tfzr_rsok_autosalon.Data.Repository.IRepository;
 using tfzr_rsok_autosalon.Models;
 
 namespace tfzr_rsok_autosalon.Data.Repository
