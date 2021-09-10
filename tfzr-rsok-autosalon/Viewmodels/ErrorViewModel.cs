@@ -1,6 +1,6 @@
 using System;
 
-namespace tfzr_rsok_autosalon.Models
+namespace tfzr_rsok_autosalon.Viewmodels
 {
     public class ErrorViewModel
     {
