@@ -1,0 +1,54 @@
+﻿@model IEnumerable<tfzr_rsok_autosalon.Viewmodels.CarsViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Model.Manufacturers.Name
+            </td>
+
+            <td>
+                @item.Model.Categorizes.Name
+            </td>
+
+            <td>
+                @item.Model.CarModels.Name
+            </td>
+
+            <td>
+                @item.Model.HorsePower <span>HP</span>
+            </td>
+            <td>
+                @item.Model.Torque <span>Nm</span>
+            </td>
+            <td>
+                @item.Model.NumberOfDoors <span>doors</span>
+            </td>
+            <td>
+                @item.Model.Description
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Model.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Model.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Model.Id })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
