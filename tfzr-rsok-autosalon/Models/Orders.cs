@@ -20,7 +20,7 @@ namespace tfzr_rsok_autosalon.Models
         public DateTime DateOfPurchase { get; set; }
         public override bool IsModelValid()
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
