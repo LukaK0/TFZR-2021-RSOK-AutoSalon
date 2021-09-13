@@ -25,7 +25,7 @@ namespace tfzr_rsok_autosalon.Services
         }
         public IEnumerable<CarModelsViewModel> GetAll()
         {
-            return _repository.GetAll(includeProperties: "Category , Manufacturer").Select(x => new CarModelsViewModel(x).CreateViewModel());
+            return _repository.GetAll(includeProperties: "Category, Manufacturer").Select(x => new CarModelsViewModel(x).CreateViewModel());
         }
 
         public SelectList GetCategoryForDropDown()
