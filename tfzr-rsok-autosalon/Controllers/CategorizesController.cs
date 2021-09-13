@@ -28,15 +28,9 @@ namespace tfzr_rsok_autosalon.Controllers
             return View();
         }
 
-        public IActionResult Details(int id)
-        {
-            var model = _service.Get(id) as CategorizesViewModel;
-            return View(model);
-        }
-
         public IActionResult Edit(int id)
         {
-            var model = _service.Get(id) as CategorizesViewModel;
+            var model = _service.Get(id).CreateViewModel();
             return View(model);
         }
     }

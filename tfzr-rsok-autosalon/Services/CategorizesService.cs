@@ -27,17 +27,17 @@ namespace tfzr_rsok_autosalon.Services
 
         public IBaseViewModel<Categorizes> Get(int id)
         {
-            throw new NotImplementedException();
+            return new CategorizesViewModel(_repository.Get(id));
         }
 
         public void Update(Categorizes model)
         {
-            throw new NotImplementedException();
+            _repository.Update(model);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _repository.Remove(_repository.Get(id));
         }
 
         public void Add(Categorizes model)

@@ -1,0 +1,16 @@
+﻿@model tfzr_rsok_autosalon.Models.Categorizes
+@inject tfzr_rsok_autosalon.Services.IServices.ICategorizesService _categorizesService
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Categorizes - add a new</h2>
+<form class="form" asp-controller="Categorizes" asp-action="Add" method="post" enctype="multipart/form-data">
+    <label class="form-control" asp-for="Name"></label>
+    <input class="form-control form-text" asp-for="Name" />
+
+
+
+    <button type="submit btn btn-success">Save</button>
+</form>
