@@ -8,19 +8,34 @@
 <h2>Create new car</h2>
 <form asp-controller="Cars" asp-action="Add" method="post" enctype="multipart/form-data">
     <label asp-for="Manufacturers"></label>
-    <select asp-for="ManufacturersId" asp-items="@_carsService.GetManufacturersForDropDown()"></select>
+    <br />
+    <select class="form-select" asp-for="ManufacturersId" asp-items="@_carsService.GetManufacturersForDropDown()"></select>
+    <br />
     <label asp-for="Categorizes"></label>
-    <select asp-for="CategoryId" asp-items="@_carsService.GetCategoryForDropDown()"></select>
+    <br />
+    <select class="form-select" asp-for="CategoryId" asp-items="@_carsService.GetCategoryForDropDown()"></select>
+    <br />
     <label asp-for="CarModels"></label>
-    <select asp-for="CarModelId" asp-items="@_carsService.GetModelsForDropDown()"></select>
+    <br />
+    <select class="form-select" asp-for="CarModelId" asp-items="@_carsService.GetModelsForDropDown()"></select>
+    <br />
     <label asp-for="Description"></label>
-    <input asp-for="Description" />
+    <br />
+    <input class="form-control" asp-for="Description" />
+    <br />
     <label asp-for="HorsePower"></label>
-    <input asp-for="HorsePower" />
+    <br />
+    <input class="form-control" asp-for="HorsePower" />
+    <br />
     <label asp-for="Torque"></label>
-    <input asp-for="Torque" />
+    <br />
+    <input class="form-control" asp-for="Torque" />
+    <br />
     <label asp-for="NumberOfDoors"></label>
-    <input asp-for="NumberOfDoors" />
+    <br />
+    <input class="form-control" asp-for="NumberOfDoors" />
+    <br />
+    <br />
 
 
 

@@ -5,12 +5,14 @@
     Layout = "_Layout";
 }
 
-<h2>Create new manufacture</h2>
+<h2>Create new manufacturer</h2>
 <form asp-controller="Manufacturers" asp-action="Add" method="post" enctype="multipart/form-data">
     <label asp-for="Name"></label>
-    <input asp-for="Name" />
+    <br/>
+    <input class="form-control" asp-for="Name" />
 
 
-
+    <br/>
+    <br/>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
