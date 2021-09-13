@@ -27,27 +27,22 @@ namespace tfzr_rsok_autosalon.Services
 
         public IBaseViewModel<Manufacturers> Get(int id)
         {
-            throw new NotImplementedException();
+            return _repository.Get(id) as IBaseViewModel<Manufacturers>;
         }
 
         public void Update(Manufacturers model)
         {
-            throw new NotImplementedException();
+            _repository.Update(model);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _repository.Remove(_repository.Get(id));
         }
 
         public void Add(Manufacturers model)
         {
             _repository.Add(model);
-        }
-
-        IBaseViewModel<Manufacturers> IService<Manufacturers, IBaseViewModel<Manufacturers>>.GetAll()
-        {
-            throw new NotImplementedException();
         }
     }
 }

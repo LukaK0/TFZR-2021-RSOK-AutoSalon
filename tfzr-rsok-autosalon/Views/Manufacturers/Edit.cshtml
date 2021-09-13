@@ -1,0 +1,15 @@
+﻿@model tfzr_rsok_autosalon.Models.Manufacturers
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Edit - Manufacturers</h2>
+<form asp-controller="Manufacturers" asp-action="Edit" method="post" enctype="multipart/form-data">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+
+
+
+    <button type="submit">Save</button>
+</form>

@@ -56,10 +56,5 @@ namespace tfzr_rsok_autosalon.Services
         {
             _repository.Add(model);
         }
-
-        IBaseViewModel<Orders> IService<Orders, IBaseViewModel<Orders>>.GetAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

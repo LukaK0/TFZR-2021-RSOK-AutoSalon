@@ -28,12 +28,6 @@ namespace tfzr_rsok_autosalon.Controllers
             return View();
         }
 
-        public IActionResult Details(int id)
-        {
-            var model = _service.Get(id) as ManufacturersViewModel;
-            return View(model);
-        }
-
         public IActionResult Edit(int id)
         {
             var model = _service.Get(id) as ManufacturersViewModel;
