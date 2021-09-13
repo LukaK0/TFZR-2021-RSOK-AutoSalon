@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Manufacturers</h1>
+<h1>View</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -22,9 +22,11 @@
             <td>
                 @item.Model.Name
             </td>
+
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Model.Id }, new {@class="btn-warning btn"})
-                @Html.ActionLink("Delete", "Delete", new { id = item.Model.Id }, new { @class = "btn-danger btn" })
+                @Html.ActionLink("Edit", "Edit", new { id = item.Model.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Model.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Model.Id })
             </td>
         </tr>
     }
