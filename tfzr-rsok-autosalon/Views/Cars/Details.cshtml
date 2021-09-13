@@ -1,8 +1,17 @@
-﻿@model tfzr_rsok_autosalon.Models.Cars
+﻿@model tfzr_rsok_autosalon.Viewmodels.CarsViewModel
 
 @{
     Layout = "_Layout";
 }
 
-<h2>Details</h2>
-<p>@Model.Description</p>
+<div class="jumbotron">
+    <h1 class="display-4">Hello!</h1>
+    <p class="lead">This is a brand new @Model.Model.CarModels.Name @Model.Model.Manufacturers.Name</p>
+    <hr class="my-4">
+    <p>@Model.Model.Categorizes.Name</p>
+    <p>@Model.Model.HorsePower HP @Model.Model.NumberOfDoors doors @Model.Model.Torque Nm</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" asp-controller="Orders" asp-action="Create" asp-route-id="@Model.Model.Id" role="button">Buy it now!</a>
+    </p>
+</div>
+<p class="text-center">@Model.Model.Description</p>

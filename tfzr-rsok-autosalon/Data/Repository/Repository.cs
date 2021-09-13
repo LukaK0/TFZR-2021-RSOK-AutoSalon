@@ -19,9 +19,18 @@ namespace tfzr_rsok_autosalon.Data.Repository
             DbSet = context.Set<T>();
         }
 
-        public T Get(int id)
+        public T Get(int id, string includeProperties = null)
         {
-            return DbSet.Find(id);
+            IQueryable<T> query = DbSet;
+            if (includeProperties != null)
+            {
+                foreach (var includeProperty in includeProperties.Split(new char[] { ',' },
+                    StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProperty.Trim());
+                }
+            }
+            return query.FirstOrDefault(x=> x.Id == id);
         }
 
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
@@ -96,7 +105,7 @@ namespace tfzr_rsok_autosalon.Data.Repository
             {
                 return;
             }
-            
+
             _context.Entry(model).CurrentValues.SetValues(entity);
             _context.SaveChanges();
         }

@@ -8,7 +8,7 @@ namespace tfzr_rsok_autosalon.Data.Repository.IRepository
 {
     public interface IRepository<T> where T : class
     {
-        T Get(int id);
+        T Get(int id, string includeProperties = null);
 
         IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,

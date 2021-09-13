@@ -31,7 +31,7 @@ namespace tfzr_rsok_autosalon.Controllers
 
         public IActionResult Details(int id)
         {
-            var model = _service.Get(id) as CarsViewModel;
+            var model = _service.Get(id);
             return View(model);
         }
 

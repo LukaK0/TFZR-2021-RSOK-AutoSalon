@@ -12,9 +12,11 @@ namespace tfzr_rsok_autosalon.Controllers
     public class OrdersController : BaseController<Orders>
     {
         private new readonly IOrdersService _service;
-        public OrdersController(IOrdersService service) : base(service)
+        private readonly ICarsService _carsService;
+        public OrdersController(IOrdersService service, ICarsService carsService) : base(service)
         {
             _service = service;
+            _carsService = carsService;
         }
 
         public IActionResult Index()
@@ -22,22 +24,32 @@ namespace tfzr_rsok_autosalon.Controllers
             var model = _service.GetAll();
             return View(model.ToList());
         }
-
-        public IActionResult Create()
+        public IActionResult Accept(int id)
         {
-            return View();
+            var model = _service.Get(id).CreateViewModel();
+            model.Status = 1;
+            _service.Update(model);
+            return RedirectToAction("Index");
+        }
+        public IActionResult Decline(int id)
+        {
+            var model = _service.Get(id).CreateViewModel();
+            model.Status = 0;
+            _service.Update(model);
+            return RedirectToAction("Index");
         }
 
-        public IActionResult Details(int id)
+        [HttpGet]
+        public IActionResult Create(int id)
         {
-            var model = _service.Get(id) as OrdersViewModel;
-            return View(model);
-        }
+            var model = new Orders();
+            var car = _carsService.Get(id).CreateViewModel();
+            model.CarId = car.Id;
+            model.Status = 0;
+            model.DateOfPurchase = DateTime.Now;
+            _service.Add(model);
 
-        public IActionResult Edit(int id)
-        {
-            var model = _service.Get(id) as OrdersViewModel;
-            return View(model);
+            return RedirectToAction("Index");
         }
     }
 }

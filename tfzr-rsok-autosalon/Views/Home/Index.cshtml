@@ -20,7 +20,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">@car.Model.Manufacturers.Name</h6>
                 <p class="card-text">@car.Model.HorsePower HP @car.Model.NumberOfDoors doors @car.Model.Torque Nm</p>
                 <p class="card-text">@car.Model.Description</p>
-                <a class="card-link" asp-controller="Cars" asp-action="Details">Show more</a>
+                <a class="card-link" asp-controller="Cars" asp-action="Details" asp-route-id="@car.Model.Id">Show more</a>
             </div>
         </div>
     }
