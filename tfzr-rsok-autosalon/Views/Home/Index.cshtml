@@ -1,8 +1,36 @@
-﻿@{
+﻿@model IEnumerable<tfzr_rsok_autosalon.Viewmodels.CarsViewModel>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@if (Model != null)
+{
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">@Model.Count() car@(Model.Count() == 1 ? "" : "s") for sale.</h1>
+            <p class="lead">Best buy, quality no quantity.</p>
+        </div>
+    </div>
+    @foreach (var car in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@car.Model.CarModels.Name</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@car.Model.Manufacturers.Name</h6>
+                <p class="card-text">@car.Model.HorsePower HP @car.Model.NumberOfDoors doors @car.Model.Torque Nm</p>
+                <p class="card-text">@car.Model.Description</p>
+                <a class="card-link" asp-controller="Cars" asp-action="Details">Show more</a>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Sorry...</h1>
+            <p class="lead">Something went wrong..</p>
+        </div>
+    </div>
+}

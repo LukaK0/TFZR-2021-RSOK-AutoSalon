@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using tfzr_rsok_autosalon.Models;
+using tfzr_rsok_autosalon.Services.IServices;
 using tfzr_rsok_autosalon.Viewmodels;
 
 namespace tfzr_rsok_autosalon.Controllers
@@ -13,15 +14,18 @@ namespace tfzr_rsok_autosalon.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ICarsService _carsService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICarsService carsService)
         {
             _logger = logger;
+            _carsService = carsService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var cars = _carsService.GetAll();
+            return View(cars);
         }
 
         public IActionResult Privacy()
