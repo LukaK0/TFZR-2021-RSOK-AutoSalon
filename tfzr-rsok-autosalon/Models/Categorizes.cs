@@ -10,7 +10,7 @@ namespace tfzr_rsok_autosalon.Models
         public string Name { get; set; }
         public override bool IsModelValid()
         {
-            throw new System.NotImplementedException();
+            return !string.IsNullOrEmpty(Name);
         }
     }
 }

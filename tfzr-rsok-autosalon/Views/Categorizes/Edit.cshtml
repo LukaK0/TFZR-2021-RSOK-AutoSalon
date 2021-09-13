@@ -1,0 +1,16 @@
+﻿@model tfzr_rsok_autosalon.Models.Categorizes
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Categorizes - Edit</h2>
+<form class="form" asp-controller="Categorizes" asp-action="Update" method="post" enctype="multipart/form-data">
+    <label asp-for="Name"></label>
+    <input class="form-control form-text" asp-for="Name" />
+    <input type="hidden" asp-for="Id"/>
+
+
+
+    <button type="submit" class="btn btn-success">Save</button>
+</form>

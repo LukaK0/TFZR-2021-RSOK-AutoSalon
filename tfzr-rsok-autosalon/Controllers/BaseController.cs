@@ -27,8 +27,8 @@ namespace tfzr_rsok_autosalon.Controllers
 
             return RedirectToAction("Index");
         }
-        [HttpPatch("{id}")]
-        public ActionResult Update([FromBody] T value)
+        [HttpPost]
+        public ActionResult Update([FromForm] T value)
         {
             try
             {
@@ -40,10 +40,10 @@ namespace tfzr_rsok_autosalon.Controllers
             }
             return RedirectToAction("Index");
         }
-        [HttpDelete("{id}")]
-        public IActionResult Delete([FromBody] T value)
+        [HttpGet]
+        public IActionResult Delete(int id)
         {
-            _service.Delete(value.Id);
+            _service.Delete(id);
             return RedirectToAction("Index");
         }
     }

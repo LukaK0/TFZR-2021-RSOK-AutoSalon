@@ -1,0 +1,33 @@
+﻿@model IEnumerable<tfzr_rsok_autosalon.Viewmodels.CategorizesViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Model.Name
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Model.Id }, new {@class="btn btn-warning"})
+                @Html.ActionLink("Delete", "Delete", new { id = item.Model.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

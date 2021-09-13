@@ -27,7 +27,7 @@ namespace tfzr_rsok_autosalon.Services
 
         public IBaseViewModel<Categorizes> Get(int id)
         {
-            return _repository.Get(id) as IBaseViewModel<Categorizes>;
+            return new CategorizesViewModel(_repository.Get(id));
         }
 
         public void Update(Categorizes model)
