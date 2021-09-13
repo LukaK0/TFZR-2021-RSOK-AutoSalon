@@ -1,8 +1,28 @@
-﻿@model tfzr_rsok_autosalon.Viewmodels.CarModelsViewModel
+﻿@model tfzr_rsok_autosalon.Models.CarModels
+@inject tfzr_rsok_autosalon.Services.IServices.ICarModelsService _carModelsService
 
 @{
     Layout = "_Layout";
 }
 
-<h2>Edit</h2>
-<p>Edit @Model.Model.Name</p>
+<h2>Car model - Edit</h2>
+<form class="form" asp-controller="CarModels" asp-action="Update" method="post" enctype="multipart/form-data">
+    <label asp-for="Name"></label>
+    <br />
+    <input class="form-control" asp-for="Name" />
+    <br />
+    <label asp-for="Manufacturer"></label>
+    <br />
+    <select class="form-select" asp-for="Manufacturer" asp-items="@_carModelsService.GetManufacturersForDropDown()"></select>
+    <br />
+    <label asp-for="Category"></label>
+    <br />
+    <select class="form-select" asp-for="Category" asp-items="@_carModelsService.GetCategoryForDropDown()"></select>
+    <br />
+    <br />
+    <input type="hidden" asp-for="Id" />
+
+
+
+    <button type="submit" class="btn btn-success">Save</button>
+</form>

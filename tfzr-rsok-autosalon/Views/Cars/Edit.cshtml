@@ -1,8 +1,43 @@
-﻿@model tfzr_rsok_autosalon.Viewmodels.CarsViewModel
+﻿@model tfzr_rsok_autosalon.Models.Cars
+@inject tfzr_rsok_autosalon.Services.IServices.ICarsService _carsService
 
 @{
     Layout = "_Layout";
 }
 
-<h2>Edit</h2>
-<p>Edit @Model.Model.Description</p>
+<h2>Car - Edit</h2>
+<form class="form" asp-controller="Cars" asp-action="Update" method="post" enctype="multipart/form-data">
+    <label asp-for="Manufacturers"></label>
+    <br />
+    <select class="form-select" asp-for="ManufacturersId" asp-items="@_carsService.GetManufacturersForDropDown()"></select>
+    <br />
+    <label asp-for="Categorizes"></label>
+    <br />
+    <select class="form-select" asp-for="CategoryId" asp-items="@_carsService.GetCategoryForDropDown()"></select>
+    <br />
+    <label asp-for="CarModels"></label>
+    <br />
+    <select class="form-select" asp-for="CarModelId" asp-items="@_carsService.GetModelsForDropDown()"></select>
+    <br />
+    <label asp-for="Description"></label>
+    <br />
+    <input class="form-control" asp-for="Description" />
+    <br />
+    <label asp-for="HorsePower"></label>
+    <br />
+    <input class="form-control" asp-for="HorsePower" />
+    <br />
+    <label asp-for="Torque"></label>
+    <br />
+    <input class="form-control" asp-for="Torque" />
+    <br />
+    <label asp-for="NumberOfDoors"></label>
+    <br />
+    <input class="form-control" asp-for="NumberOfDoors" />
+    <br />
+    <input type="hidden" asp-for="Id" />
+
+
+
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
