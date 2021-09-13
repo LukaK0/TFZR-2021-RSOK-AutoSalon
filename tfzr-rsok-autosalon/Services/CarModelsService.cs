@@ -41,17 +41,17 @@ namespace tfzr_rsok_autosalon.Services
 
         public IBaseViewModel<CarModels> Get(int id)
         {
-            throw new NotImplementedException();
+            return _repository.Get(id) as IBaseViewModel<CarModels>;
         }
 
         public void Update(CarModels model)
         {
-            throw new NotImplementedException();
+            _repository.Update(model);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _repository.Remove(_repository.Get(id));
         }
 
         public void Add(CarModels model)
