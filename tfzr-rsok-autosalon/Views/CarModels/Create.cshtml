@@ -1,0 +1,17 @@
+﻿@model tfzr_rsok_autosalon.Models.CarModels
+@inject tfzr_rsok_autosalon.Services.IServices.ICarModelsService _carModelsService
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Create new car model</h2>
+<form asp-controller="CarModels" asp-action="Add" method="post" enctype="multipart/form-data">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <label asp-for="Manufacturer"></label>
+    <select asp-for="Manufacturer" asp-items="@_carModelsService.GetManufacturersForDropDown()"></select>
+    <label asp-for="Category"></label>
+    <select asp-for="Category" asp-items="@_carModelsService.GetCategoryForDropDown()"></select>
+    <button type="submit">Save</button>
+</form>

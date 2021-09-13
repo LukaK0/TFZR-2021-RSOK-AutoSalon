@@ -47,8 +47,13 @@ namespace tfzr_rsok_autosalon
             services.AddScoped<ICarsRepository, CarsRepository>();
             services.AddScoped<ICarsService, CarsService>();
             services.AddScoped<ICategorizesRepository, CategorizesRepository>();
+            services.AddScoped<ICategorizesService, CategorizesService>();
             services.AddScoped<ICarModelsRepository, CarModelsRepository>();
+            services.AddScoped<ICarModelsService, CarModelsService>();
             services.AddScoped<IManufacturesRepository, ManufacturesRepository>();
+            services.AddScoped<IManufacturersService, ManufacturersService>();
+            services.AddScoped<IOrdersRepository, OrdersRepository>();
+            services.AddScoped<IOrdersService, OrdersService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
