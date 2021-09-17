@@ -5,11 +5,13 @@ namespace tfzr_rsok_autosalon.Models
     public class CarModels : BaseModel
     {
         public string Name { get; set; }
-        [ForeignKey("FK_Categorizes_CarModels")]
+        [ForeignKey("CategoryId")]
         public virtual Categorizes Category { get; set; }
+        public int CategoryId { get; set; }
 
-        [ForeignKey("FK_Manufacturer_CarModels")]
+        [ForeignKey("ManufacturerId")]
         public virtual Manufacturers Manufacturer { get; set; }
+        public int ManufacturerId { get; set; }
 
         public override bool IsModelValid()
         {

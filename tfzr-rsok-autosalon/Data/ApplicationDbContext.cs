@@ -32,6 +32,10 @@ namespace tfzr_rsok_autosalon.Data
             builder.Entity<IdentityUserRole<string>>().ToTable(name: "UserRole");
             builder.Entity<IdentityUserClaim<string>>().ToTable(name: "UserClaim");
             builder.Entity<IdentityRoleClaim<string>>().ToTable(name: "RoleClaim");
+
+            builder.Entity<CarModels>().HasOne(c => c.Category);
+            builder.Entity<CarModels>().HasOne(c => c.Manufacturer);
+
         }
     }
 }

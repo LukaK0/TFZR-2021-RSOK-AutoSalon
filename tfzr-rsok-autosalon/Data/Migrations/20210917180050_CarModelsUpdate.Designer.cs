@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tfzr_rsok_autosalon.Data;
 
 namespace tfzr_rsok_autosalon.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210917180050_CarModelsUpdate")]
+    partial class CarModelsUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -229,6 +231,12 @@ namespace tfzr_rsok_autosalon.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("FK_Categorizes_CarModels")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FK_Manufacturer_CarModels")
+                        .HasColumnType("int");
+
                     b.Property<int>("ManufacturerId")
                         .HasColumnType("int");
 
@@ -237,9 +245,9 @@ namespace tfzr_rsok_autosalon.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("FK_Categorizes_CarModels");
 
-                    b.HasIndex("ManufacturerId");
+                    b.HasIndex("FK_Manufacturer_CarModels");
 
                     b.ToTable("CarModels");
                 });
@@ -406,15 +414,11 @@ namespace tfzr_rsok_autosalon.Data.Migrations
                 {
                     b.HasOne("tfzr_rsok_autosalon.Models.Categorizes", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FK_Categorizes_CarModels");
 
                     b.HasOne("tfzr_rsok_autosalon.Models.Manufacturers", "Manufacturer")
                         .WithMany()
-                        .HasForeignKey("ManufacturerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FK_Manufacturer_CarModels");
                 });
 
             modelBuilder.Entity("tfzr_rsok_autosalon.Models.Cars", b =>

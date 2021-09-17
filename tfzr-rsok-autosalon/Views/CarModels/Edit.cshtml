@@ -13,11 +13,11 @@
     <br />
     <label asp-for="Manufacturer"></label>
     <br />
-    <select class="form-select" asp-for="Manufacturer" asp-items="@_carModelsService.GetManufacturersForDropDown()"></select>
+    <select class="form-select" asp-for="ManufacturerId" asp-items="@_carModelsService.GetManufacturersForDropDown()"></select>
     <br />
     <label asp-for="Category"></label>
     <br />
-    <select class="form-select" asp-for="Category" asp-items="@_carModelsService.GetCategoryForDropDown()"></select>
+    <select class="form-select" asp-for="CategoryId" asp-items="@_carModelsService.GetCategoryForDropDown()"></select>
     <br />
     <br />
     <input type="hidden" asp-for="Id" />
