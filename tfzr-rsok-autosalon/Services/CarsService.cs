@@ -49,6 +49,11 @@ namespace tfzr_rsok_autosalon.Services
 
         public IBaseViewModel<Cars> Get(int id)
         {
+            return _repository.Get(id, "CarModels, Categorizes , Manufacturers") as IBaseViewModel<Cars>;
+        }
+
+        public IBaseViewModel<Cars> GetDetails(int id)
+        {
             return new CarsViewModel(_repository.Get(id, "CarModels, Categorizes , Manufacturers"));
         }
 

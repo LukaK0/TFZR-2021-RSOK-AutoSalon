@@ -5,20 +5,20 @@
     Layout = "_Layout";
 }
 
-<h2>Create new car model</h2>
+<h2>Kreiraj novi model</h2>
 <form asp-controller="CarModels" asp-action="Add" method="post" enctype="multipart/form-data">
-    <label asp-for="Name"></label>
+    <label asp-for="Name">Ime</label>
     <br />
     <input class="form-control" asp-for="Name" />
     <br />
-    <label asp-for="Manufacturer"></label>
+    <label asp-for="Manufacturer">Proizvodjac</label>
     <br />
     <select class="form-select" asp-for="ManufacturerId" asp-items="@_carModelsService.GetManufacturersForDropDown()"></select>
     <br />
-    <label asp-for="Category"></label>
+    <label asp-for="Category">Kategorija</label>
     <br />
     <select class="form-select" asp-for="CategoryId" asp-items="@_carModelsService.GetCategoryForDropDown()"></select>
     <br />
     <br />
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
 </form>

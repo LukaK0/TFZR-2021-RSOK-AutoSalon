@@ -8,8 +8,8 @@
 {
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">@Model.Count() car@(Model.Count() == 1 ? "" : "s") for sale.</h1>
-            <p class="lead">Best buy, quality no quantity.</p>
+            <h1 class="display-4">@Model.Count() auta@(Model.Count() == 1 ? "" : "") na prodaju.</h1>
+            <p class="lead">Najbolja kupovina, kvalitet pre svega.</p>
         </div>
     </div>
     @foreach (var car in Model)
@@ -18,9 +18,9 @@
             <div class="card-body">
                 <h5 class="card-title">@car.Model.CarModels.Name</h5>
                 <h6 class="card-subtitle mb-2 text-muted">@car.Model.Manufacturers.Name</h6>
-                <p class="card-text">@car.Model.HorsePower HP @car.Model.NumberOfDoors doors @car.Model.Torque Nm</p>
+                <p class="card-text">@car.Model.HorsePower KS @car.Model.NumberOfDoors vrata @car.Model.Torque Nm</p>
                 <p class="card-text">@car.Model.Description</p>
-                <a class="card-link" asp-controller="Cars" asp-action="Details" asp-route-id="@car.Model.Id">Show more</a>
+                <a class="card-link" asp-controller="Cars" asp-action="Details" asp-route-id="@car.Model.Id">Prikazi vise</a>
             </div>
         </div>
     }

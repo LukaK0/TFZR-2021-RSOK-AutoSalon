@@ -23,7 +23,7 @@ namespace tfzr_rsok_autosalon.Services
         }
         public IEnumerable<OrdersViewModel> GetAll()
         {
-            return _repository.GetAll();
+            return _repository.GetAll(includeProperties: "Car").Select(x => new OrdersViewModel(x).CreateViewModel());
         }
 
         public SelectList GetCarForDropDown()

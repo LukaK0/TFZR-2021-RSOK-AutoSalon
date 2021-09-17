@@ -4,22 +4,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>CARS</h1>
+<h1>VOZILA</h1>
 
 <p>
-    <a asp-action="Create" type="button" class="btn btn-primary">Create New</a>
+    <a asp-action="Create" type="button" class="btn btn-primary">Dodaj</a>
 </p>
 <table class="table">
     <thead>
     <tr>
-        <th>Manufacturer</th>
-        <th>Category</th>
-        <th>Car model</th>
-        <th>HP</th>
-        <th>Torque</th>
-        <th>Doors</th>
-        <th>Desc.</th>
-        <th>Options</th>
+        <th>Proizvodjac</th>
+        <th>Kategorija</th>
+        <th>Model</th>
+        <th>Konjaza</th>
+        <th>Obrtni moment</th>
+        <th>Broj vrata</th>
+        <th>Opis</th>
+        <th>Opcije</th>
     </tr>
     </thead>
     <tbody>
@@ -39,21 +39,21 @@
             </td>
 
             <td>
-                @item.Model.HorsePower <span>HP</span>
+                @item.Model.HorsePower <span>KS</span>
             </td>
             <td>
                 @item.Model.Torque <span>Nm</span>
             </td>
             <td>
-                @item.Model.NumberOfDoors <span>doors</span>
+                @item.Model.NumberOfDoors <span>vrata</span>
             </td>
             <td>
                 @item.Model.Description
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Model.Id }, new { @class = "btn btn-warning" })
-                @Html.ActionLink("Details", "Details", new { id = item.Model.Id }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Delete", "Delete", new { id = item.Model.Id }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Izmeni", "Edit", new { id = item.Model.Id }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Detaljno", "Details", new { id = item.Model.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Obrisi", "Delete", new { id = item.Model.Id }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }

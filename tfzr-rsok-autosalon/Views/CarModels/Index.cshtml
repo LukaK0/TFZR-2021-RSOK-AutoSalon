@@ -4,18 +4,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>CAR MODELS</h1>
+<h1>MODELI</h1>
 
 <p>
-    <a asp-action="Create" type="button" class="btn btn-primary">Create New</a>
+    <a asp-action="Create" type="button" class="btn btn-primary">Dodaj</a>
 </p>
 <table class="table">
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Manufacturer</th>
-        <th>Category</th>
-        <th>Options</th>
+        <th>Ime</th>
+        <th>Proizvodjac</th>
+        <th>Kategorija</th>
+        <th>Opcije</th>
     </tr>
     </thead>
     <tbody>
@@ -35,8 +35,8 @@
             </td>
 
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Model.Id }, new { @class = "btn btn-warning" })
-                @Html.ActionLink("Delete", "Delete", new { id = item.Model.Id }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Izmeni", "Edit", new { id = item.Model.Id }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Obrisi", "Delete", new { id = item.Model.Id }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }

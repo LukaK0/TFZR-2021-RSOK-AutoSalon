@@ -4,13 +4,13 @@
     Layout = "_Layout";
 }
 
-<h2>Categorizes - Edit</h2>
+<h2>Izmena kategorije</h2>
 <form class="form" asp-controller="Categorizes" asp-action="Update" method="post" enctype="multipart/form-data">
-    <label asp-for="Name"></label>
+    <label asp-for="Name">Ime</label>
     <input class="form-control form-text" asp-for="Name" />
     <input type="hidden" asp-for="Id"/>
 
 
 
-    <button type="submit" class="btn btn-success">Save</button>
+    <button type="submit" class="btn btn-success">Sacuvaj</button>
 </form>

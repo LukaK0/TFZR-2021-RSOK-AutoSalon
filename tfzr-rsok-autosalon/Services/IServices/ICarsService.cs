@@ -15,5 +15,6 @@ namespace tfzr_rsok_autosalon.Services.IServices
         SelectList GetCategoryForDropDown();
         SelectList GetModelsForDropDown();
         SelectList GetManufacturersForDropDown();
+        IBaseViewModel<Cars> GetDetails(int id);
     }
 }
