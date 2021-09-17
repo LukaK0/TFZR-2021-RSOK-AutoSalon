@@ -12,7 +12,10 @@ namespace tfzr_rsok_autosalon.Services.IServices
     public interface IOrdersService : IService<Orders, IBaseViewModel<Orders>>
     {
         IEnumerable<OrdersViewModel> GetAll();
+        IEnumerable<Orders> GetAllModel();
         SelectList GetUserForDropDown();
         SelectList GetCarForDropDown();
+
+        Orders GetModel(int id);
     }
 }

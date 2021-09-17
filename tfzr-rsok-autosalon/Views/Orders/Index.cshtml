@@ -9,7 +9,9 @@
 <table class="table">
     <thead>
     <tr>
-        <th></th>
+        <th>Model</th>
+        <th>Proizvodjac</th>
+        <th>Datum</th>
     </tr>
     </thead>
     <tbody>
@@ -18,15 +20,17 @@
         <tr>
             <td>
                 @item.Model.Car.CarModels.Name
+            </td>
+            <td>
                 @item.Model.Car.Manufacturers.Name
             </td>
             <td>@item.Model.DateOfPurchase.Date</td>
             <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.Model.Id }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Izbrisi", "Delete", new { id = item.Model.Id }, new { @class = "btn btn-danger" })
                 @(item.Model.Status == 0 ? 
-                    Html.ActionLink("Accept", "Accept", new {id = @item.Model.Id}, new {@class="btn btn-sucess"})
+                    Html.ActionLink("Prihvati", "Accept", new {id = @item.Model.Id}, new {@class="btn btn-success"})
                         :
-                    Html.ActionLink("Decline", "Decline", new {id = @item.Model.Id}, new {@class="btn btn-warning"})
+                    Html.ActionLink("Odbij", "Decline", new {id = @item.Model.Id}, new {@class="btn btn-warning"})
                     )
             </td>
         </tr>

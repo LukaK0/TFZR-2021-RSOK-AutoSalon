@@ -57,6 +57,11 @@ namespace tfzr_rsok_autosalon.Services
             return new CarsViewModel(_repository.Get(id, "CarModels, Categorizes , Manufacturers"));
         }
 
+        public Cars GetModel(int id)
+        {
+            return _repository.Get(id, "CarModels, Categorizes , Manufacturers");
+        }
+
         public void Update(Cars model)
         {
             _repository.Update(model);

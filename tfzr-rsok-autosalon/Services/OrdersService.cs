@@ -26,6 +26,11 @@ namespace tfzr_rsok_autosalon.Services
             return _repository.GetAll(includeProperties: "Car").Select(x => new OrdersViewModel(x).CreateViewModel());
         }
 
+        public IEnumerable<Orders> GetAllModel()
+        {
+            return _repository.GetAll(includeProperties: "Car");
+        }
+
         public SelectList GetCarForDropDown()
         {
 
@@ -39,7 +44,12 @@ namespace tfzr_rsok_autosalon.Services
 
         public IBaseViewModel<Orders> Get(int id)
         {
-            return _repository.Get(id) as IBaseViewModel<Orders>;
+            return _repository.Get(id, includeProperties: "Car") as IBaseViewModel<Orders>;
+        }
+
+        public Orders GetModel(int id)
+        {
+            return _repository.Get(id, includeProperties: "Car");
         }
 
         public void Update(Orders model)
